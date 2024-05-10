@@ -123,7 +123,9 @@ async function validateDockerRunning() {
       singleCompose ? '-f ./docs/dev/single-compose.yml ' : ''
     }up`;
   }
-  console.green('Your LibreChat app is now up to date! Start the app with the following command:');
+  console.green(
+    'Your LibreChat app is now up to date! Start the app with the following V1 command:',
+  );
   console.purple(startCommand);
   console.orange(
     'Note: it\'s also recommended to clear your browser cookies and localStorage for LibreChat to assure a fully clean installation.',
