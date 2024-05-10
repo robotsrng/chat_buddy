@@ -169,13 +169,13 @@ export default function useTextarea({
         e.preventDefault();
       }
 
-      if (e.key === 'Enter' && !enterToSend && textAreaRef.current) {
+      if (e.key === 'Enter' && !enterToSend && !e.metaKey && textAreaRef.current) {
         insertTextAtCursor(textAreaRef.current, '\n');
         forceResize(textAreaRef);
         return;
       }
 
-      if (isNonShiftEnter && !isComposing?.current) {
+      if (isNonShiftEnter &&  e.metaKey && !isComposing?.current) {
         submitButtonRef.current?.click();
       }
     },
